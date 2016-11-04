@@ -1,0 +1,21 @@
+<div class="ui large button" (click)="goBack()">Go Back</div>
+<h2 class="ui top attached header">Add Member</h2>
+<div class="ui basic attached segment form">
+  <div class="field">
+    <label>Name</label>
+    <input placeholder="name" #memberName>
+  </div>
+  <div class="two fields">
+  <div class="field">
+    <label>Position</label>
+    <input placeholder="position" #memberPosition>
+  </div>
+  <div class="field">
+    <label>Capacity (days)</label>
+    <input type="number" placeholder="capacity" #memberCapacity>
+  </div>
+  </div>
+</div>
+<div class="ui bottom attached segment">
+  <button class="ui large button positive" (click)="add(memberName.value, memberPosition.value, memberCapacity.value);">Save &amp; Member</button>
+</div>

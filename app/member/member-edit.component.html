@@ -1,0 +1,26 @@
+<div *ngIf="member">
+  <button class="ui large button" (click)="goBack()">Go Back</button>
+  <h2 class="ui top attached header">
+  Edit Member
+  <div class="ui label">ID<div class="detail">{{member.id}}</div></div>
+  </h2>
+  <div class="ui basic attached segment form">
+    <div class="field">
+      <label>Name</label>
+      <input [(ngModel)]="member.name" placeholder="name">
+    </div>
+    <div class="two fields">
+    <div class="field">
+      <label>Position</label>
+      <input [(ngModel)]="member.position" placeholder="position">
+    </div>
+    <div class="field">
+      <label>Capacity (days)</label>
+      <input type="number" [(ngModel)]="member.capacity" placeholder="capacity">
+    </div>
+    </div>
+  </div>
+  <div class="ui bottom attached segment">
+    <button class="ui large button positive" (click)="save()">Save</button>
+  </div>
+</div>

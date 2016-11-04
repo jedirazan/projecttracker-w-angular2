@@ -11,13 +11,61 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var dashboard_component_1 = require('./dashboard.component');
-var projects_component_1 = require('./projects.component');
-var project_detail_component_1 = require('./project-detail.component');
+var project_component_1 = require('./project/project.component');
+var project_add_component_1 = require('./project/project-add.component');
+var sprint_component_1 = require('./sprint/sprint.component');
+var sprint_add_component_1 = require('./sprint/sprint-add.component');
+var member_component_1 = require('./member/member.component');
+var member_add_component_1 = require('./member/member-add.component');
+var member_edit_component_1 = require('./member/member-edit.component');
+var task_add_component_1 = require('./task/task-add.component');
+var task_edit_component_1 = require('./task/task-edit.component');
 var routes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
-    { path: 'detail/:id', component: project_detail_component_1.ProjectDetailComponent },
-    { path: 'projects', component: projects_component_1.ProjectsComponent }
+    {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+    },
+    {
+        path: 'dashboard',
+        component: dashboard_component_1.DashboardComponent
+    },
+    {
+        path: 'project/add',
+        component: project_add_component_1.ProjectAddComponent
+    },
+    {
+        path: 'project/:id',
+        component: project_component_1.ProjectComponent
+    },
+    {
+        path: 'iteration/:id',
+        component: sprint_component_1.SprintComponent
+    },
+    {
+        path: 'iteration/add/:id',
+        component: sprint_add_component_1.SprintAddComponent
+    },
+    {
+        path: 'members',
+        component: member_component_1.MemberComponent
+    },
+    {
+        path: 'member/add',
+        component: member_add_component_1.MemberAddComponent
+    },
+    {
+        path: 'member/:id',
+        component: member_edit_component_1.MemberEditComponent
+    },
+    {
+        path: 'task/:id',
+        component: task_edit_component_1.TaskEditComponent
+    },
+    {
+        path: 'task/add/:id',
+        component: task_add_component_1.TaskAddComponent
+    }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

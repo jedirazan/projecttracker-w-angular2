@@ -10,28 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var project_service_1 = require('./project.service');
+var project_service_1 = require('./project/project.service');
 var DashboardComponent = (function () {
     function DashboardComponent(router, projectService) {
         this.router = router;
         this.projectService = projectService;
-        this.projects = [];
     }
-    DashboardComponent.prototype.ngOnInit = function () {
+    DashboardComponent.prototype.getProjects = function () {
         var _this = this;
-        this.projectService.getProjects()
-            .then(function (projects) { return _this.projects = projects.slice(1, 5); });
+        this.projectService.getProjects().then(function (projects) { return _this.projects = projects; });
     };
-    DashboardComponent.prototype.gotoDetail = function (project) {
-        var link = ['/detail', project.id];
+    DashboardComponent.prototype.ngOnInit = function () {
+        this.getProjects();
+    };
+    DashboardComponent.prototype.gotoProjectDetails = function (project) {
+        var link = ['/project', project.id];
         this.router.navigate(link);
     };
     DashboardComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-dashboard',
-            templateUrl: 'dashboard.component.html',
-            styleUrls: ['dashboard.component.css']
+            templateUrl: 'dashboard.component.html'
         }), 
         __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
     ], DashboardComponent);

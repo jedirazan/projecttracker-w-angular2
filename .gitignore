@@ -37,6 +37,6 @@
 ehthumbs.db
 Thumbs.db
 
-
 /node_modules
 /semantic
+/typings

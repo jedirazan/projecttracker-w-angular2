@@ -1,0 +1,34 @@
+<div class="ui large button" (click)="goBack()">Go Back</div>
+<h2 class="ui top attached header">Add Task</h2>
+<div class="ui basic attached segment form">
+  <div class="three fields">
+    <div class="field">
+      <label>State</label>
+      <select class="ui dropdown" #taskState>
+        <option *ngFor="let opt of state" [value]="opt.value">{{opt.key}}</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Effort (days)</label>
+      <input type="number" placeholder="Effort" #taskEffort>
+    </div>
+    <div class="field">
+      <label>Related Ticket</label>
+      <input placeholder="Related Ticket" #taskRelatedTicket>
+    </div>
+  </div>
+  <div class="field">
+    <label>Title</label>
+    <input placeholder="Title" #taskTitle>
+  </div>
+  <div class="field">
+    <label>Assigned To</label>
+    <select class="ui dropdown" #taskAssignee>
+      <option value="" disabled="disabled">+ Assign Member</option>
+      <option *ngFor="let optMember of members" [value]="optMember.id">{{optMember.name}}</option>
+    </select>
+  </div>
+</div>
+<div class="ui bottom attached segment">
+  <div class="ui large button positive" (click)="addTask(taskTitle.value, taskEffort.value, taskState.value, taskAssignee.value, taskRelatedTicket.value)">Save &amp; Add Task</div>
+</div>

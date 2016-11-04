@@ -1,0 +1,145 @@
+<div *ngIf="sprint">
+
+  <div class="ui large primary button" (click)="saveSprint()">Save &amp; Go Back</div>
+
+  <div class="ui basic segment">
+    <div class="ui grid">
+
+      <div class="twelve wide column">
+
+        <div class="ui form">
+          <div class="field">
+            <label>Sprint Title <i class="icon write"></i></label>
+            <div class="ui huge input">
+              <input [(ngModel)]="sprint.title" placeholder="Title">
+            </div>
+          </div>
+        </div>
+
+        <h3>{{sprint.title}} Activity</h3>
+        <div class="ui horizontal segments">
+          <div class="ui segment">
+            <div [ngClass]="statsState(totalAssigned < sprint.tasks?.length, '')" class="ui statistic">
+              <div class="value">{{totalAssigned}}/{{sprint.tasks?.length}}</div>
+              <div class="label">Tasks assigned</div>
+            </div>
+          </div>
+          <div class="ui segment">
+            <div class="ui three statistics">
+              <div class="statistic">
+                <div class="value">{{totalNew}}</div>
+                <div class="label">New</div>
+              </div>
+              <div class="statistic">
+                <div class="value">{{totalInProgress}}</div>
+                <div class="label">In progress</div>
+              </div>
+              <div class="statistic">
+                <div class="value">{{totalDone}}</div>
+                <div class="label">Done</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Task lists</h3>
+
+        <table class="ui padded table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>State</th>
+              <th>Assigned To</th>
+              <th>Effort (days)</th>
+              <th>Title</th>
+              <th>Related Ticket</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of sprintTasks">
+              <td>{{task.id}}</td>
+              <td>{{task.state}}</td>
+              <td>{{getMemberName(task.assignee)}}</td>
+              <td>{{task.effort}}</td>
+              <td>{{task.title}}</td>
+              <td>{{task.relatedTicket}}</td>
+              <td>
+                <div class="ui basic right floated buttons">
+                  <button class="ui icon button" (click)="gotoDetailTask(task)"><i class="setting icon"></i></button>
+                  <button class="ui icon button" (click)="removeTask(task)"><i class="remove icon"></i></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>{{sprint.tasks?.length}} tasks</th>
+              <th></th>
+              <th></th>
+              <th>{{sumEffort}}d of total effort</th>
+              <th></th>
+              <th></th>
+              <th><button class="ui button secondary right floated" (click)="addTask(sprint)"><i class="plus icon"></i>Add Task</button></th>
+            </tr>
+          </tfoot>
+        </table>
+
+      </div>
+
+      <div class="four wide column">
+
+        <h3>Team members</h3>
+        <div class="ui cards">
+          <div class="card">
+            <div class="content">
+              <div class="description">
+                <div class="ui horizontal statistic">
+                  <div class="value">{{sprint.members?.length}}</div>
+                  <div class="label">members</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <div class="ui horizontal statistic">
+                  <div class="value">{{sumEffort}}/{{sumCapacity}}</div>
+                  <div class="label">Capacity used</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content" *ngFor="let member of sprintMembers">
+              <div class="ui vertical basic right floated buttons">
+                <button class="ui icon button" (click)="gotoDetailMember(member);">
+                  <i class="setting icon"></i>
+                </button>
+                <button class="ui icon button" (click)="removeMember(member); $event.stopPropagation()" *ngIf="sumEffortIndividual(member) === 0">
+                  <i class="remove icon"></i>
+                </button>
+              </div>
+              <div class="header">{{member.name}}</div>
+              <div class="meta">{{member.position}}</div>
+              <div class="description">
+                <div [ngClass]="statsState(sumEffortIndividual(member) > member.capacity, ' tiny horizontal')">
+                  <div class="value">{{sumEffortIndividual(member)}}/{{member.capacity}}</div>
+                  <div class="label">Capacity used</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <select class="ui fluid selection dropdown" #selectMember (change)="addMember($event.target.value); selectMember.value=''">
+                <option value="" disabled="disabled">+ Add Member</option>
+                <option *ngFor="let member of nonMembers" value="{{member.id}}">{{member.name}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

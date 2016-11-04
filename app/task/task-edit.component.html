@@ -1,0 +1,39 @@
+<div *ngIf="task">
+  <button class="ui large button" (click)="goBack()">Go Back</button>
+  <h2 class="ui top attached header">
+  Edit Task
+  <div class="ui label">ID<div class="detail">{{task.id}}</div></div>
+  </h2>
+  <div class="ui basic attached segment form">
+    <div class="three fields">
+      <div class="field">
+        <label>State</label>
+        <select class="ui dropdown" [(ngModel)]="task.state">
+          <option *ngFor="let optState of state" [value]="optState.value">{{optState.key}}</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Effort (days)</label>
+        <input [(ngModel)]="task.effort" placeholder="Effort">
+      </div>
+      <div class="field">
+        <label>Related Ticket</label>
+        <input [(ngModel)]="task.relatedTicket" placeholder="Related Ticket">
+      </div>
+    </div>
+    <div class="field">
+      <label>Title</label>
+      <input [(ngModel)]="task.title" placeholder="Title">
+    </div>
+    <div class="field">
+      <label>Assigned To</label>
+      <select class="ui dropdown" [(ngModel)]="task.assignee">
+        <option value="" disabled="disabled">+ Assign Member</option>
+        <option *ngFor="let optMember of members" [value]="optMember.id">{{optMember.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="ui bottom attached segment">
+    <div class="ui large button positive" (click)="saveTask()">Save</div>
+  </div>
+</div>

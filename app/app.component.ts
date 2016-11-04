@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 
 @Component({
-	moduleId: module.id,
-	selector: 'my-app',
-	template: `
-	<h1>{{title}}</h1>
-	<nav>
-	<a routerLink="/dashboard">Dashboard</a>
-	<a routerLink="/projects">Projects</a>
-	</nav>
-	<router-outlet></router-outlet>
-	`,
-	styleUrls: [ 'app.component.css' ]
+  moduleId: module.id,
+  selector: 'my-app',
+  template: `
+    <nav class="ui secondary menu">
+      <div class="header item"><h1>{{title}}</h1></div>
+	    <a class="item" routerLink="/dashboard">Dashboard</a>
+      <a class="item" routerLink="/members">All members</a>
+    </nav>
+    <div class="ui divider"></div>
+    <router-outlet></router-outlet>
+  `
 })
 
 export class AppComponent {
-	title = 'Task Tracker (w/ Angular)';
+  title = 'Tour of Heroes';
 }

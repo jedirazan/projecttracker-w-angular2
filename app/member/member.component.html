@@ -1,0 +1,11 @@
+<h2>Members list</h2>
+<a class="ui large button primary" routerLink="/member/add">
+  <i class="plus icon"></i>Add Member
+</a>
+<div class="ui relaxed selection list">
+  <div class="item" *ngFor="let member of members" (click)="gotoDetailMember(member)"
+      [class.selected]="member === selectedMember">
+    <i class="right triangle icon"></i>
+    <div class="content"><div class="header">{{member.name}}</div>{{member.position}}</div>
+  </div>
+</div>

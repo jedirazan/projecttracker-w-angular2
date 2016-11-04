@@ -1,0 +1,33 @@
+<div class="ui large button" (click)="goBack()">Go Back</div>
+<h2 class="ui top attached header">Add Project</h2>
+<div class="ui basic attached segment form">
+  <div class="field">
+    <label>Title</label>
+    <input placeholder="Title of project" #projectTitle>
+  </div>
+  <div class="field">
+    <label>Summary</label>
+    <textarea rows="3" #projectSummary placeholder="Summary of project"></textarea>
+  </div>
+  <div class="field">
+    <label>Members</label>
+    <div class="ui relaxed selection list">
+    <div class="item" *ngFor="let member of projectMembers">
+      <div class="right floated content">
+        <div class="ui icon button" (click)="removeMember(member); $event.stopPropagation();"><i class="remove icon"></i></div>
+      </div>
+      <i class="right triangle icon"></i>
+      <div class="content"><div class="header">{{member.name}}</div>{{member.position}}</div>
+    </div>
+    <div class="item">
+      <select class="ui dropdown" #selectMember (change)="addMember($event.target.value); selectMember.value=''">
+        <option value="" disabled="disabled">+ Add Member</option>
+        <option *ngFor="let member of nonMembers" value="{{member.id}}">{{member.name}}</option>
+      </select>
+    </div>
+  </div>
+  </div>
+</div>
+<div class="ui bottom attached segment">
+  <button class="ui large button positive" (click)="addProject(projectTitle.value, projectSummary.value, projectMembers);">Save &amp; Add Project</button>
+</div>

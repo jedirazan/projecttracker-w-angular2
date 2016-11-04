@@ -15,14 +15,23 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_routing_module_1 = require('./app-routing.module');
 // Imports for loading & configuring the in-memory web api
-var in_memory_web_api_module_1 = require('angular-in-memory-web-api/in-memory-web-api.module');
+var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
 var in_memory_data_service_1 = require('./in-memory-data.service');
 var app_component_1 = require('./app.component');
 var dashboard_component_1 = require('./dashboard.component');
-var project_detail_component_1 = require('./project-detail.component');
-var projects_component_1 = require('./projects.component');
-var project_service_1 = require('./project.service');
-var project_search_component_1 = require('./project-search.component');
+var project_component_1 = require('./project/project.component');
+var project_add_component_1 = require('./project/project-add.component');
+var project_service_1 = require('./project/project.service');
+var sprint_component_1 = require('./sprint/sprint.component');
+var sprint_add_component_1 = require('./sprint/sprint-add.component');
+var sprint_service_1 = require('./sprint/sprint.service');
+var member_component_1 = require('./member/member.component');
+var member_add_component_1 = require('./member/member-add.component');
+var member_edit_component_1 = require('./member/member-edit.component');
+var member_service_1 = require('./member/member.service');
+var task_add_component_1 = require('./task/task-add.component');
+var task_edit_component_1 = require('./task/task-edit.component');
+var task_service_1 = require('./task/task.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,17 +41,28 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                in_memory_web_api_module_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
+                angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
                 app_routing_module_1.AppRoutingModule
             ],
             declarations: [
                 app_component_1.AppComponent,
                 dashboard_component_1.DashboardComponent,
-                project_detail_component_1.ProjectDetailComponent,
-                projects_component_1.ProjectsComponent,
-                project_search_component_1.ProjectSearchComponent
+                project_component_1.ProjectComponent,
+                project_add_component_1.ProjectAddComponent,
+                sprint_component_1.SprintComponent,
+                sprint_add_component_1.SprintAddComponent,
+                member_component_1.MemberComponent,
+                member_add_component_1.MemberAddComponent,
+                member_edit_component_1.MemberEditComponent,
+                task_add_component_1.TaskAddComponent,
+                task_edit_component_1.TaskEditComponent
             ],
-            providers: [project_service_1.ProjectService],
+            providers: [
+                project_service_1.ProjectService,
+                sprint_service_1.SprintService,
+                task_service_1.TaskService,
+                member_service_1.MemberService
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -1,9 +1,17 @@
-<h3>Top Projects</h3>
-<div class="grid grid-pad">
-  <div *ngFor="let project of projects" (click)="gotoDetail(project)" class="col-1-4">
-    <div class="module project">
-      <h4>{{project.name}}</h4>
+<div>
+<h2>All Projects</h2>
+<div class="ui four cards">
+  <div class="card" *ngFor="let project of projects">
+    <div class="content">
+      <div class="header">{{project.title}}</div>
+      <div class="description">{{project.summary}}</div>
     </div>
+    <div class="ui bottom attached basic button" (click)="gotoProjectDetails(project)">View Project</div>
   </div>
+  <a class="card" routerLink="/project/add">
+  	<div class="content">
+  		<div class="header"><i class="plus icon"></i>Add Project</div>
+  	</div>
+  </a>
 </div>
-<project-search></project-search>
+</div>
