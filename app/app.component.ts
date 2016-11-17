@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
     <nav class="ui secondary menu">
       <div class="header item"><h1>{{title}}</h1></div>
 	    <a class="item" routerLink="/dashboard">Dashboard</a>
-      <a class="item" routerLink="/members">All members</a>
+      <a class="item" routerLink="/members">All Members</a>
     </nav>
     <div class="ui divider"></div>
     <router-outlet></router-outlet>
@@ -15,5 +15,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Project Tracker';
 }

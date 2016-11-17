@@ -1,7 +1,7 @@
 export class Project {
   id: number;
   title: string;
-  description: string;
+  summary: string;
   sprints: number[];
   members: number[];
 }
