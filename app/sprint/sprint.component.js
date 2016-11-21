@@ -8,14 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
-var project_service_1 = require('../project/project.service');
-var sprint_1 = require('./sprint');
-var sprint_service_1 = require('./sprint.service');
-var task_service_1 = require('../task/task.service');
-var member_service_1 = require('../member/member.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
+var project_service_1 = require("../project/project.service");
+var sprint_1 = require("./sprint");
+var sprint_service_1 = require("./sprint.service");
+var task_service_1 = require("../task/task.service");
+var member_service_1 = require("../member/member.service");
 var SprintComponent = (function () {
     function SprintComponent(router, route, projectService, sprintService, taskService, memberService, location) {
         this.router = router;
@@ -168,19 +168,25 @@ var SprintComponent = (function () {
         var link = ['/project', this.sprint.project];
         this.sprintService.update(this.sprint).then(function () { return _this.router.navigate(link); });
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', sprint_1.Sprint)
-    ], SprintComponent.prototype, "sprint", void 0);
-    SprintComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-sprint',
-            templateUrl: 'sprint.component.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, project_service_1.ProjectService, sprint_service_1.SprintService, task_service_1.TaskService, member_service_1.MemberService, common_1.Location])
-    ], SprintComponent);
     return SprintComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", sprint_1.Sprint)
+], SprintComponent.prototype, "sprint", void 0);
+SprintComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'my-sprint',
+        templateUrl: 'sprint.component.html'
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        router_1.ActivatedRoute,
+        project_service_1.ProjectService,
+        sprint_service_1.SprintService,
+        task_service_1.TaskService,
+        member_service_1.MemberService,
+        common_1.Location])
+], SprintComponent);
 exports.SprintComponent = SprintComponent;
 //# sourceMappingURL=sprint.component.js.map

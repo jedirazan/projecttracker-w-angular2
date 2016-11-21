@@ -8,18 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./dashboard.component');
-var project_component_1 = require('./project/project.component');
-var project_add_component_1 = require('./project/project-add.component');
-var sprint_component_1 = require('./sprint/sprint.component');
-var sprint_add_component_1 = require('./sprint/sprint-add.component');
-var member_component_1 = require('./member/member.component');
-var member_add_component_1 = require('./member/member-add.component');
-var member_edit_component_1 = require('./member/member-edit.component');
-var task_add_component_1 = require('./task/task-add.component');
-var task_edit_component_1 = require('./task/task-edit.component');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var dashboard_component_1 = require("./dashboard.component");
+var project_component_1 = require("./project/project.component");
+var project_add_component_1 = require("./project/project-add.component");
+var sprint_component_1 = require("./sprint/sprint.component");
+var sprint_add_component_1 = require("./sprint/sprint-add.component");
+var member_component_1 = require("./member/member.component");
+var member_add_component_1 = require("./member/member-add.component");
+var member_edit_component_1 = require("./member/member-edit.component");
+var task_add_component_1 = require("./task/task-add.component");
+var task_edit_component_1 = require("./task/task-edit.component");
 var routes = [
     {
         path: '',
@@ -70,14 +70,14 @@ var routes = [
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }
-    AppRoutingModule = __decorate([
-        core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(routes)],
-            exports: [router_1.RouterModule]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
     return AppRoutingModule;
 }());
+AppRoutingModule = __decorate([
+    core_1.NgModule({
+        imports: [router_1.RouterModule.forRoot(routes)],
+        exports: [router_1.RouterModule]
+    }),
+    __metadata("design:paramtypes", [])
+], AppRoutingModule);
 exports.AppRoutingModule = AppRoutingModule;
 //# sourceMappingURL=app-routing.module.js.map

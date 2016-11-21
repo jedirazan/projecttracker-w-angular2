@@ -8,13 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
-var project_service_1 = require('./project.service');
-var project_1 = require('./project');
-var member_service_1 = require('../member/member.service');
-var sprint_service_1 = require('../sprint/sprint.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
+var project_service_1 = require("./project.service");
+var project_1 = require("./project");
+var member_service_1 = require("../member/member.service");
+var sprint_service_1 = require("../sprint/sprint.service");
 var ProjectComponent = (function () {
     function ProjectComponent(projectService, sprintService, memberService, router, route, location) {
         this.projectService = projectService;
@@ -39,7 +39,7 @@ var ProjectComponent = (function () {
             _this.projectService.getProject(id)
                 .then(function (project) { return _this.project = project; })
                 .then(function (project) {
-                var _loop_1 = function(id_1) {
+                var _loop_1 = function (id_1) {
                     _this.memberService.getMember(id_1)
                         .then(function (member) { return _this.projectMembers.push(member); });
                     _this.nonMembers = _this.nonMembers.filter(function (member) { return member.id !== id_1; });
@@ -86,19 +86,24 @@ var ProjectComponent = (function () {
         var link = ['/dashboard'];
         this.projectService.update(this.project).then(function () { return _this.router.navigate(link); });
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', project_1.Project)
-    ], ProjectComponent.prototype, "project", void 0);
-    ProjectComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-project',
-            templateUrl: 'project.component.html'
-        }), 
-        __metadata('design:paramtypes', [project_service_1.ProjectService, sprint_service_1.SprintService, member_service_1.MemberService, router_1.Router, router_1.ActivatedRoute, common_1.Location])
-    ], ProjectComponent);
     return ProjectComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", project_1.Project)
+], ProjectComponent.prototype, "project", void 0);
+ProjectComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'my-project',
+        templateUrl: 'project.component.html'
+    }),
+    __metadata("design:paramtypes", [project_service_1.ProjectService,
+        sprint_service_1.SprintService,
+        member_service_1.MemberService,
+        router_1.Router,
+        router_1.ActivatedRoute,
+        common_1.Location])
+], ProjectComponent);
 exports.ProjectComponent = ProjectComponent;
 //# sourceMappingURL=project.component.js.map

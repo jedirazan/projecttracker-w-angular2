@@ -9,12 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 // export for convenience.
-var router_1 = require('@angular/router');
+var router_1 = require("@angular/router");
 exports.ActivatedRoute = router_1.ActivatedRoute;
 exports.Router = router_1.Router;
 exports.RouterLink = router_1.RouterLink;
 exports.RouterOutlet = router_1.RouterOutlet;
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var RouterLinkStubDirective = (function () {
     function RouterLinkStubDirective() {
         this.navigatedTo = null;
@@ -22,45 +22,45 @@ var RouterLinkStubDirective = (function () {
     RouterLinkStubDirective.prototype.onClick = function () {
         this.navigatedTo = this.linkParams;
     };
-    __decorate([
-        core_1.Input('routerLink'), 
-        __metadata('design:type', Object)
-    ], RouterLinkStubDirective.prototype, "linkParams", void 0);
-    RouterLinkStubDirective = __decorate([
-        core_1.Directive({
-            selector: '[routerLink]',
-            host: {
-                '(click)': 'onClick()'
-            }
-        }), 
-        __metadata('design:paramtypes', [])
-    ], RouterLinkStubDirective);
     return RouterLinkStubDirective;
 }());
+__decorate([
+    core_1.Input('routerLink'),
+    __metadata("design:type", Object)
+], RouterLinkStubDirective.prototype, "linkParams", void 0);
+RouterLinkStubDirective = __decorate([
+    core_1.Directive({
+        selector: '[routerLink]',
+        host: {
+            '(click)': 'onClick()'
+        }
+    }),
+    __metadata("design:paramtypes", [])
+], RouterLinkStubDirective);
 exports.RouterLinkStubDirective = RouterLinkStubDirective;
 var RouterOutletStubComponent = (function () {
     function RouterOutletStubComponent() {
     }
-    RouterOutletStubComponent = __decorate([
-        core_1.Component({ selector: 'router-outlet', template: '' }), 
-        __metadata('design:paramtypes', [])
-    ], RouterOutletStubComponent);
     return RouterOutletStubComponent;
 }());
+RouterOutletStubComponent = __decorate([
+    core_1.Component({ selector: 'router-outlet', template: '' }),
+    __metadata("design:paramtypes", [])
+], RouterOutletStubComponent);
 exports.RouterOutletStubComponent = RouterOutletStubComponent;
 var RouterStub = (function () {
     function RouterStub() {
     }
     RouterStub.prototype.navigate = function (commands, extras) { };
-    RouterStub = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], RouterStub);
     return RouterStub;
 }());
+RouterStub = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], RouterStub);
 exports.RouterStub = RouterStub;
 // Only implements params and part of snapshot.params
-var BehaviorSubject_1 = require('rxjs/BehaviorSubject');
+var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
 var ActivatedRouteStub = (function () {
     function ActivatedRouteStub() {
         // ActivatedRoute.params is Observable
@@ -84,12 +84,12 @@ var ActivatedRouteStub = (function () {
         enumerable: true,
         configurable: true
     });
-    ActivatedRouteStub = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], ActivatedRouteStub);
     return ActivatedRouteStub;
 }());
+ActivatedRouteStub = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], ActivatedRouteStub);
 exports.ActivatedRouteStub = ActivatedRouteStub;
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

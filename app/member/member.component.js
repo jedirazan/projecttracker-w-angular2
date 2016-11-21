@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var member_service_1 = require('./member.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var member_service_1 = require("./member.service");
 var MemberComponent = (function () {
     function MemberComponent(router, memberService) {
         this.router = router;
@@ -27,15 +27,16 @@ var MemberComponent = (function () {
         var link = ['/member', member.id];
         this.router.navigate(link);
     };
-    MemberComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-members',
-            templateUrl: 'member.component.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, member_service_1.MemberService])
-    ], MemberComponent);
     return MemberComponent;
 }());
+MemberComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'my-members',
+        templateUrl: 'member.component.html'
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        member_service_1.MemberService])
+], MemberComponent);
 exports.MemberComponent = MemberComponent;
 //# sourceMappingURL=member.component.js.map

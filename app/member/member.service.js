@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-require('rxjs/add/operator/toPromise');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/toPromise");
 var MemberService = (function () {
     function MemberService(http) {
         this.http = http;
@@ -60,11 +60,11 @@ var MemberService = (function () {
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);
     };
-    MemberService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], MemberService);
     return MemberService;
 }());
+MemberService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], MemberService);
 exports.MemberService = MemberService;
 //# sourceMappingURL=member.service.js.map

@@ -1,8 +1,8 @@
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var http_1 = require('@angular/http');
-var testing_2 = require('@angular/http/testing');
-var member_service_1 = require('./member.service');
+var testing_1 = require("@angular/core/testing");
+var http_1 = require("@angular/http");
+var testing_2 = require("@angular/http/testing");
+var member_service_1 = require("./member.service");
 describe('Service: MemberService', function () {
     var backend;
     var service;
@@ -85,7 +85,8 @@ describe('Service: MemberService', function () {
                     id: 1,
                     name: 'R2-B2',
                     position: '',
-                    capacity: 0 }
+                    capacity: 0
+                }
             ],
             status: 200
         });

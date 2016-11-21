@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
-var project_service_1 = require('./project.service');
-var member_service_1 = require('../member/member.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
+var project_service_1 = require("./project.service");
+var member_service_1 = require("../member/member.service");
 var ProjectAddComponent = (function () {
     function ProjectAddComponent(projectService, memberService, router, location) {
         this.projectService = projectService;
@@ -55,15 +55,18 @@ var ProjectAddComponent = (function () {
         this.projectService.create(title, summary, ids)
             .then(function () { return _this.router.navigate(['/dashboard']); });
     };
-    ProjectAddComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-project-add',
-            templateUrl: 'project-add.component.html'
-        }), 
-        __metadata('design:paramtypes', [project_service_1.ProjectService, member_service_1.MemberService, router_1.Router, common_1.Location])
-    ], ProjectAddComponent);
     return ProjectAddComponent;
 }());
+ProjectAddComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'my-project-add',
+        templateUrl: 'project-add.component.html'
+    }),
+    __metadata("design:paramtypes", [project_service_1.ProjectService,
+        member_service_1.MemberService,
+        router_1.Router,
+        common_1.Location])
+], ProjectAddComponent);
 exports.ProjectAddComponent = ProjectAddComponent;
 //# sourceMappingURL=project-add.component.js.map

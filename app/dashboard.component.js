@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var project_service_1 = require('./project/project.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var project_service_1 = require("./project/project.service");
 var DashboardComponent = (function () {
     function DashboardComponent(router, projectService) {
         this.router = router;
@@ -27,15 +27,16 @@ var DashboardComponent = (function () {
         var link = ['/project', project.id];
         this.router.navigate(link);
     };
-    DashboardComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-dashboard',
-            templateUrl: 'dashboard.component.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
-    ], DashboardComponent);
     return DashboardComponent;
 }());
+DashboardComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'my-dashboard',
+        templateUrl: 'dashboard.component.html'
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        project_service_1.ProjectService])
+], DashboardComponent);
 exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map

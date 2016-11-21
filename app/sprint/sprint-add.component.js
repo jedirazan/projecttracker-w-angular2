@@ -8,12 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
-var sprint_service_1 = require('./sprint.service');
-var project_service_1 = require('../project/project.service');
-var member_service_1 = require('../member/member.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
+var sprint_service_1 = require("./sprint.service");
+var project_service_1 = require("../project/project.service");
+var member_service_1 = require("../member/member.service");
 var SprintAddComponent = (function () {
     function SprintAddComponent(sprintService, projectService, memberService, route, location) {
         this.sprintService = sprintService;
@@ -75,15 +75,19 @@ var SprintAddComponent = (function () {
             });
         });
     };
-    SprintAddComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-sprint-add',
-            templateUrl: 'sprint-add.component.html'
-        }), 
-        __metadata('design:paramtypes', [sprint_service_1.SprintService, project_service_1.ProjectService, member_service_1.MemberService, router_1.ActivatedRoute, common_1.Location])
-    ], SprintAddComponent);
     return SprintAddComponent;
 }());
+SprintAddComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'my-sprint-add',
+        templateUrl: 'sprint-add.component.html'
+    }),
+    __metadata("design:paramtypes", [sprint_service_1.SprintService,
+        project_service_1.ProjectService,
+        member_service_1.MemberService,
+        router_1.ActivatedRoute,
+        common_1.Location])
+], SprintAddComponent);
 exports.SprintAddComponent = SprintAddComponent;
 //# sourceMappingURL=sprint-add.component.js.map

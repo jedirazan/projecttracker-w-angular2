@@ -1,8 +1,8 @@
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var http_1 = require('@angular/http');
-var testing_2 = require('@angular/http/testing');
-var task_service_1 = require('./task.service');
+var testing_1 = require("@angular/core/testing");
+var http_1 = require("@angular/http");
+var testing_2 = require("@angular/http/testing");
+var task_service_1 = require("./task.service");
 describe('Service: TaskService', function () {
     var backend;
     var service;

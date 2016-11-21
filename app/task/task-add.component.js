@@ -8,12 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
-var sprint_service_1 = require('../sprint/sprint.service');
-var task_service_1 = require('./task.service');
-var member_service_1 = require('../member/member.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
+var sprint_service_1 = require("../sprint/sprint.service");
+var task_service_1 = require("./task.service");
+var member_service_1 = require("../member/member.service");
 var TaskAddComponent = (function () {
     function TaskAddComponent(sprintService, taskService, memberService, route, location) {
         this.sprintService = sprintService;
@@ -70,15 +70,19 @@ var TaskAddComponent = (function () {
             });
         });
     };
-    TaskAddComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-task-add',
-            templateUrl: 'task-add.component.html'
-        }), 
-        __metadata('design:paramtypes', [sprint_service_1.SprintService, task_service_1.TaskService, member_service_1.MemberService, router_1.ActivatedRoute, common_1.Location])
-    ], TaskAddComponent);
     return TaskAddComponent;
 }());
+TaskAddComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'my-task-add',
+        templateUrl: 'task-add.component.html'
+    }),
+    __metadata("design:paramtypes", [sprint_service_1.SprintService,
+        task_service_1.TaskService,
+        member_service_1.MemberService,
+        router_1.ActivatedRoute,
+        common_1.Location])
+], TaskAddComponent);
 exports.TaskAddComponent = TaskAddComponent;
 //# sourceMappingURL=task-add.component.js.map

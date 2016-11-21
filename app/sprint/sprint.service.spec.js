@@ -1,8 +1,8 @@
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var http_1 = require('@angular/http');
-var testing_2 = require('@angular/http/testing');
-var sprint_service_1 = require('./sprint.service');
+var testing_1 = require("@angular/core/testing");
+var http_1 = require("@angular/http");
+var testing_2 = require("@angular/http/testing");
+var sprint_service_1 = require("./sprint.service");
 describe('Service: SprintService', function () {
     var backend;
     var service;

@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
-var member_service_1 = require('./member.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
+var member_service_1 = require("./member.service");
 var MemberEditComponent = (function () {
     function MemberEditComponent(memberService, route, location) {
         this.memberService = memberService;
@@ -34,15 +34,17 @@ var MemberEditComponent = (function () {
         this.memberService.update(this.member)
             .then(function () { return _this.goBack(); });
     };
-    MemberEditComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-member-edit',
-            templateUrl: 'member-edit.component.html'
-        }), 
-        __metadata('design:paramtypes', [member_service_1.MemberService, router_1.ActivatedRoute, common_1.Location])
-    ], MemberEditComponent);
     return MemberEditComponent;
 }());
+MemberEditComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'my-member-edit',
+        templateUrl: 'member-edit.component.html'
+    }),
+    __metadata("design:paramtypes", [member_service_1.MemberService,
+        router_1.ActivatedRoute,
+        common_1.Location])
+], MemberEditComponent);
 exports.MemberEditComponent = MemberEditComponent;
 //# sourceMappingURL=member-edit.component.js.map
