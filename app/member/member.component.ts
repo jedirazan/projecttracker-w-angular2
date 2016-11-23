@@ -1,8 +1,8 @@
 import { Component, OnInit }  from '@angular/core';
 import { Router }             from '@angular/router';
 
-import { Member } from './member';
-import { MemberService } from './member.service';
+import { Member } from '../models/index';
+import { MemberService } from '../services/index';
 
 @Component({
   moduleId: module.id,

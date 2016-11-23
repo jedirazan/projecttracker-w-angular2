@@ -11,10 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
-var sprint_service_1 = require("../sprint/sprint.service");
-var task_service_1 = require("./task.service");
-var task_1 = require("./task");
-var member_service_1 = require("../member/member.service");
+var index_1 = require("../models/index");
+var index_2 = require("../services/index");
 var TaskEditComponent = (function () {
     function TaskEditComponent(sprintService, taskService, memberService, route, location) {
         this.sprintService = sprintService;
@@ -72,7 +70,7 @@ var TaskEditComponent = (function () {
 }());
 __decorate([
     core_1.Input(),
-    __metadata("design:type", task_1.Task)
+    __metadata("design:type", index_1.Task)
 ], TaskEditComponent.prototype, "task", void 0);
 TaskEditComponent = __decorate([
     core_1.Component({
@@ -80,9 +78,9 @@ TaskEditComponent = __decorate([
         selector: 'my-task-edit',
         templateUrl: 'task-edit.component.html'
     }),
-    __metadata("design:paramtypes", [sprint_service_1.SprintService,
-        task_service_1.TaskService,
-        member_service_1.MemberService,
+    __metadata("design:paramtypes", [index_2.SprintService,
+        index_2.TaskService,
+        index_2.MemberService,
         router_1.ActivatedRoute,
         common_1.Location])
 ], TaskEditComponent);

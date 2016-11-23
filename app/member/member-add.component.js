@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
-var member_service_1 = require("./member.service");
+var index_1 = require("../services/index");
 var MemberAddComponent = (function () {
     function MemberAddComponent(memberService, location) {
         this.memberService = memberService;
@@ -37,7 +37,7 @@ MemberAddComponent = __decorate([
         selector: 'my-member-add',
         templateUrl: 'member-add.component.html'
     }),
-    __metadata("design:paramtypes", [member_service_1.MemberService,
+    __metadata("design:paramtypes", [index_1.MemberService,
         common_1.Location])
 ], MemberAddComponent);
 exports.MemberAddComponent = MemberAddComponent;

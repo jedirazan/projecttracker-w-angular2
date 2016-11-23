@@ -2,14 +2,8 @@ import { Component, OnInit }  from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }   from '@angular/common';
 
-import { SprintService } from './sprint.service';
-import { Sprint } from './sprint';
-
-import { Project } from '../project/project';
-import { ProjectService } from '../project/project.service';
-
-import { Member } from '../member/member';
-import { MemberService } from '../member/member.service';
+import { Member, Project, Sprint } from '../models/index';
+import { MemberService, ProjectService, SprintService } from '../services/index';
 
 @Component({
   moduleId: module.id,

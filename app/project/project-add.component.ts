@@ -2,11 +2,8 @@ import { Component, OnInit }  from '@angular/core';
 import { Router }   from '@angular/router';
 import { Location }   from '@angular/common';
 
-import { Project } from './project';
-import { ProjectService } from './project.service';
-
-import { Member } from '../member/member';
-import { MemberService } from '../member/member.service';
+import { Member, Project } from '../models/index';
+import { MemberService, ProjectService } from '../services/index';
 
 @Component({
   moduleId: module.id,

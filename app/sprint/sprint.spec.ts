@@ -1,4 +1,4 @@
-import { Sprint } from './sprint';
+import { Sprint } from '../models/index';
 
 describe('Model: Sprint', () => {
 	const testSprints: Array<Sprint> = [

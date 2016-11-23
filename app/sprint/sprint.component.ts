@@ -2,17 +2,8 @@ import { Component, Input, OnInit }  from '@angular/core';
 import { Router, ActivatedRoute, Params }    from '@angular/router';
 import { Location }                 from '@angular/common';
 
-import { ProjectService } from '../project/project.service';
-import { Project } from '../project/project';
-
-import { Sprint } from './sprint';
-import { SprintService } from './sprint.service';
-
-import { Task, State } from '../task/task';
-import { TaskService } from '../task/task.service';
-
-import { Member } from '../member/member';
-import { MemberService } from '../member/member.service';
+import { Member, Project, Sprint, Task } from '../models/index';
+import { MemberService, ProjectService, SprintService, TaskService } from '../services/index';
 
 @Component({
   moduleId: module.id,

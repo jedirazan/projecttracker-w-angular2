@@ -10,9 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var dashboard_component_1 = require("./dashboard.component");
 var project_component_1 = require("./project/project.component");
 var project_add_component_1 = require("./project/project-add.component");
+var project_edit_component_1 = require("./project/project-edit.component");
 var sprint_component_1 = require("./sprint/sprint.component");
 var sprint_add_component_1 = require("./sprint/sprint-add.component");
 var member_component_1 = require("./member/member.component");
@@ -28,7 +28,7 @@ var routes = [
     },
     {
         path: 'dashboard',
-        component: dashboard_component_1.DashboardComponent
+        component: project_component_1.ProjectComponent
     },
     {
         path: 'project/add',
@@ -36,7 +36,7 @@ var routes = [
     },
     {
         path: 'project/:id',
-        component: project_component_1.ProjectComponent
+        component: project_edit_component_1.ProjectEditComponent
     },
     {
         path: 'iteration/:id',
@@ -45,6 +45,14 @@ var routes = [
     {
         path: 'iteration/add/:id',
         component: sprint_add_component_1.SprintAddComponent
+    },
+    {
+        path: 'task/add/:id',
+        component: task_add_component_1.TaskAddComponent
+    },
+    {
+        path: 'task/:id',
+        component: task_edit_component_1.TaskEditComponent
     },
     {
         path: 'members',
@@ -57,14 +65,6 @@ var routes = [
     {
         path: 'member/:id',
         component: member_edit_component_1.MemberEditComponent
-    },
-    {
-        path: 'task/:id',
-        component: task_edit_component_1.TaskEditComponent
-    },
-    {
-        path: 'task/add/:id',
-        component: task_add_component_1.TaskAddComponent
     }
 ];
 var AppRoutingModule = (function () {

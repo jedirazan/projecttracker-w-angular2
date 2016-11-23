@@ -1,4 +1,4 @@
-import { Task } from './task';
+import { Task } from '../models/index';
 
 describe('Model: Task', () => {
 	const testTasks: Array<Task> = [

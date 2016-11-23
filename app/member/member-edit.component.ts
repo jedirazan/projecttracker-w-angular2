@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 
-import { MemberService } from './member.service';
-import { Member } from './member';
+import { Member } from '../models/index';
+import { MemberService } from '../services/index';
 
 @Component({
   moduleId: module.id,

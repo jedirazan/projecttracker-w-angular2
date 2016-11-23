@@ -1,60 +1,17 @@
-<div *ngIf="project">
-
-  <div class="ui large primary button" (click)="saveProject()">Save &amp; Go Back</div>
-
-  <div class="ui basic segment">
-  <div class="ui equal width grid">
-
-    <div class="column">
-      <div class="ui basic segment form">
-        <div class="field">
-          <label>Project Title <i class="icon write"></i></label>
-          <div class="ui huge input">
-          <input [(ngModel)]="project.title"  placeholder="Title">
-          </div>
-        </div>
-        <div class="field">
-          <label>Project Summary <i class="icon write"></i></label>
-          <textarea rows="5" [(ngModel)]="project.summary"></textarea>
-        </div>
-      </div>
+<div>
+<h2>All Projects</h2>
+<div class="ui four cards">
+  <div class="card" *ngFor="let project of projects">
+    <div class="content">
+      <div class="header">{{project.title}}</div>
+      <div class="description">{{project.summary}}</div>
     </div>
-
-    <div class="column">
-      <div class="ui segment form">
-        <h2 class="ui header">Project Iterations</h2>
-        <div class="ui relaxed selection list">
-          <div class="item" *ngFor="let sprint of projectSprints" (click)="gotoIteration(sprint)">
-            <i class="right triangle icon"></i>
-            <div class="content"><div class="header">{{sprint.title}}</div></div>
-          </div>
-        </div>
-        <button class="ui button secondary" (click)="addIteration(project)"><i class="plus icon"></i>Add Iteration</button>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="ui segment form">
-        <h2 class="ui header">Project Members</h2>
-        <div class="ui relaxed selection list">
-          <div class="item" *ngFor="let member of projectMembers">
-            <div class="right floated content">
-              <div class="ui icon button" (click)="removeMember(member); $event.stopPropagation()"><i class="remove icon"></i></div>
-            </div>
-            <i class="right triangle icon"></i>
-            <div class="content"><div class="header">{{member.name}}</div>{{member.position}}</div>
-          </div>
-          <div class="item">
-            <select class="ui dropdown" #selectMember (change)="addMember($event.target.value); selectMember.value=''">
-              <option value="" disabled="disabled">+ Add Member</option>
-              <option *ngFor="let member of nonMembers" value="{{member.id}}">{{member.name}}</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <div class="ui bottom attached basic button" (click)="gotoProjectDetails(project)">View Project</div>
   </div>
-  </div>
-
+  <a class="card" routerLink="/project/add">
+  	<div class="content">
+  		<div class="header"><i class="plus icon"></i>Add Project</div>
+  	</div>
+  </a>
+</div>
 </div>

@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var member_service_1 = require("./member.service");
+var index_1 = require("../services/index");
 var MemberComponent = (function () {
     function MemberComponent(router, memberService) {
         this.router = router;
@@ -36,7 +36,7 @@ MemberComponent = __decorate([
         templateUrl: 'member.component.html'
     }),
     __metadata("design:paramtypes", [router_1.Router,
-        member_service_1.MemberService])
+        index_1.MemberService])
 ], MemberComponent);
 exports.MemberComponent = MemberComponent;
 //# sourceMappingURL=member.component.js.map

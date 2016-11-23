@@ -1,8 +1,8 @@
 import { Component }  from '@angular/core';
 import { Location }   from '@angular/common';
 
-import { MemberService } from './member.service';
-import { Member } from './member';
+import { Member } from '../models/index';
+import { MemberService } from '../services/index';
 
 @Component({
   moduleId: module.id,

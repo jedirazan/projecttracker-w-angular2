@@ -11,8 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
-var project_service_1 = require("./project.service");
-var member_service_1 = require("../member/member.service");
+var index_1 = require("../services/index");
 var ProjectAddComponent = (function () {
     function ProjectAddComponent(projectService, memberService, router, location) {
         this.projectService = projectService;
@@ -63,8 +62,8 @@ ProjectAddComponent = __decorate([
         selector: 'my-project-add',
         templateUrl: 'project-add.component.html'
     }),
-    __metadata("design:paramtypes", [project_service_1.ProjectService,
-        member_service_1.MemberService,
+    __metadata("design:paramtypes", [index_1.ProjectService,
+        index_1.MemberService,
         router_1.Router,
         common_1.Location])
 ], ProjectAddComponent);

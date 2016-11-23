@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
-var member_service_1 = require("./member.service");
+var index_1 = require("../services/index");
 var MemberEditComponent = (function () {
     function MemberEditComponent(memberService, route, location) {
         this.memberService = memberService;
@@ -42,7 +42,7 @@ MemberEditComponent = __decorate([
         selector: 'my-member-edit',
         templateUrl: 'member-edit.component.html'
     }),
-    __metadata("design:paramtypes", [member_service_1.MemberService,
+    __metadata("design:paramtypes", [index_1.MemberService,
         router_1.ActivatedRoute,
         common_1.Location])
 ], MemberEditComponent);

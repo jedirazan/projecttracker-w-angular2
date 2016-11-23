@@ -11,9 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
-var sprint_service_1 = require("../sprint/sprint.service");
-var task_service_1 = require("./task.service");
-var member_service_1 = require("../member/member.service");
+var index_1 = require("../services/index");
 var TaskAddComponent = (function () {
     function TaskAddComponent(sprintService, taskService, memberService, route, location) {
         this.sprintService = sprintService;
@@ -78,9 +76,9 @@ TaskAddComponent = __decorate([
         selector: 'my-task-add',
         templateUrl: 'task-add.component.html'
     }),
-    __metadata("design:paramtypes", [sprint_service_1.SprintService,
-        task_service_1.TaskService,
-        member_service_1.MemberService,
+    __metadata("design:paramtypes", [index_1.SprintService,
+        index_1.TaskService,
+        index_1.MemberService,
         router_1.ActivatedRoute,
         common_1.Location])
 ], TaskAddComponent);

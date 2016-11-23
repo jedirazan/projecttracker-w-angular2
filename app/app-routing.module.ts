@@ -1,8 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent }   from './dashboard.component';
-import { ProjectComponent }    from './project/project.component';
+import { ProjectComponent }   from './project/project.component';
 import { ProjectAddComponent }    from './project/project-add.component';
+import { ProjectEditComponent }    from './project/project-edit.component';
 import { SprintComponent }   from './sprint/sprint.component';
 import { SprintAddComponent }   from './sprint/sprint-add.component';
 import { MemberComponent }   from './member/member.component';
@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: ProjectComponent
   },
     {
     path: 'project/add',
@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'project/:id',
-    component: ProjectComponent
+    component: ProjectEditComponent
   },
   {
     path: 'iteration/:id',
@@ -36,6 +36,14 @@ const routes: Routes = [
   {
     path: 'iteration/add/:id',
     component: SprintAddComponent
+  },
+  {
+    path: 'task/add/:id',
+    component: TaskAddComponent
+  },
+  {
+    path: 'task/:id',
+    component: TaskEditComponent
   },
   {
     path: 'members',
@@ -48,14 +56,6 @@ const routes: Routes = [
   {
     path: 'member/:id',
     component: MemberEditComponent
-  },
-  {
-    path: 'task/:id',
-    component: TaskEditComponent
-  },
-  {
-    path: 'task/add/:id',
-    component: TaskAddComponent
   }
 ];
 

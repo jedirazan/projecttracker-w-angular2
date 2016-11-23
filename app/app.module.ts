@@ -3,7 +3,7 @@ import './rxjs-extensions';
 import { NgModule }      	from '@angular/core';
 import { BrowserModule } 	from '@angular/platform-browser';
 import { FormsModule }   	from '@angular/forms';
-import { HttpModule }    from '@angular/http';
+import { HttpModule }     from '@angular/http';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -11,21 +11,24 @@ import { AppRoutingModule }     from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
+// Imports for components & services
 import { AppComponent }  			from './app.component';
-import { DashboardComponent }    from './dashboard.component';
-import { ProjectComponent } from './project/project.component';
-import { ProjectAddComponent } from './project/project-add.component';
-import { ProjectService } from './project/project.service';
-import { SprintComponent }   from './sprint/sprint.component';
-import { SprintAddComponent }   from './sprint/sprint-add.component';
-import { SprintService }    from './sprint/sprint.service';
+
 import { MemberComponent }   from './member/member.component';
 import { MemberAddComponent }   from './member/member-add.component';
 import { MemberEditComponent }    from './member/member-edit.component';
-import { MemberService }    from './member/member.service';
+
+import { ProjectComponent }    from './project/project.component';
+import { ProjectEditComponent } from './project/project-edit.component';
+import { ProjectAddComponent } from './project/project-add.component';
+
+import { SprintComponent }   from './sprint/sprint.component';
+import { SprintAddComponent }   from './sprint/sprint-add.component';
+
 import { TaskAddComponent }   from './task/task-add.component';
 import { TaskEditComponent }    from './task/task-edit.component';
-import { TaskService }    from './task/task.service';
+
+import { MemberService, ProjectService, SprintService, TaskService } from './services/index';
 
 
 @NgModule({
@@ -38,8 +41,8 @@ import { TaskService }    from './task/task.service';
   ],
   declarations: [
     AppComponent,
-    DashboardComponent,
     ProjectComponent,
+    ProjectEditComponent,
     ProjectAddComponent,
     SprintComponent,
     SprintAddComponent,

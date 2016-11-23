@@ -1,4 +1,4 @@
-import { Member } from './member';
+import { Member } from '../models/index';
 
 describe('Model: Member', () => {
 	const testMembers: Array<Member> = [
