@@ -30,7 +30,7 @@ describe('Service: TaskService', function () {
     }));
     function setupConnections(backend, options) {
         backend.connections.subscribe(function (connection) {
-            if (connection.request.url === 'api/forms') {
+            if (connection.request.url === 'api/tasks') {
                 var responseOptions = new http_1.ResponseOptions(options);
                 var response = new http_1.Response(responseOptions);
                 connection.mockRespond(response);

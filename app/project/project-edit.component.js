@@ -93,8 +93,8 @@ __decorate([
 ProjectEditComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'my-project',
-        templateUrl: 'project.component.html'
+        selector: 'my-project-edit',
+        templateUrl: 'project-edit.component.html'
     }),
     __metadata("design:paramtypes", [index_2.ProjectService,
         index_2.SprintService,

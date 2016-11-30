@@ -21,7 +21,7 @@ describe('Service: ProjectService', () => {
 				BaseRequestOptions
 				],
 				provide: Http,
-				useFactory: (backend: XHRBackend, defaultOptions: BaseRequestOptions) => {
+				useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
 					return new Http(backend, defaultOptions);
 				}
 			}
@@ -35,7 +35,7 @@ describe('Service: ProjectService', () => {
 
 	function setupConnections(backend: MockBackend, options: any) {
 		backend.connections.subscribe((connection: MockConnection) => {
-			if (connection.request.url === 'api/forms') {
+			if (connection.request.url === 'api/projects') {
 				const responseOptions = new ResponseOptions(options);
 				const response = new Response(responseOptions);
 

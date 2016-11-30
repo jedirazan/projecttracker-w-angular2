@@ -5,7 +5,9 @@
     <div class="field">
       <label>State</label>
       <select class="ui dropdown" #taskState>
-        <option *ngFor="let opt of state" [value]="opt.value">{{opt.key}}</option>
+        <option value="New">New</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Done">Done</option>
       </select>
     </div>
     <div class="field">

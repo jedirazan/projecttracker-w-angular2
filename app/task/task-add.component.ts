@@ -12,7 +12,6 @@ import { MemberService, SprintService, TaskService } from '../services/index';
 })
 
 export class TaskAddComponent implements OnInit {
-  state: State[];
   members: Member[] = []; // initialize because we're gonna do .push later
 
   constructor(
@@ -22,11 +21,6 @@ export class TaskAddComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location
   ) {}
-
-  populateSelectState(): void {
-    this.taskService.getState()
-      .then(state => this.state = state);
-  }
 
   populateSelectMember(): void {
     this.route.params.forEach((params: Params) => {
@@ -42,7 +36,6 @@ export class TaskAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.populateSelectState();
     this.populateSelectMember();
   }
 

@@ -41,12 +41,6 @@ var TaskService = (function () {
             return sum;
         });
     };
-    TaskService.prototype.getState = function () {
-        return this.http.get('app/state')
-            .toPromise()
-            .then(function (response) { return response.json().data; })
-            .catch(this.handleError);
-    };
     TaskService.prototype.update = function (task) {
         var url = this.tasksUrl + "/" + task.id;
         return this.http

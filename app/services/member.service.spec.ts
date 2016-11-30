@@ -21,7 +21,7 @@ describe('Service: MemberService', () => {
 				BaseRequestOptions
 				],
 				provide: Http,
-				useFactory: (backend: XHRBackend, defaultOptions: BaseRequestOptions) => {
+				useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
 					return new Http(backend, defaultOptions);
 				}
 			}
@@ -35,7 +35,7 @@ describe('Service: MemberService', () => {
 
 	function setupConnections(backend: MockBackend, options: any) {
 		backend.connections.subscribe((connection: MockConnection) => {
-			if (connection.request.url === 'api/forms') {
+			if (connection.request.url === 'api/members') {
 				const responseOptions = new ResponseOptions(options);
 				const response = new Response(responseOptions);
 
@@ -91,13 +91,7 @@ describe('Service: MemberService', () => {
 
 	it('should update 1st member', () => {
 		setupConnections(backend, {
-			body: [
-			{
-				id: 1,
-				name: 'R2-B2',
-				position: '',
-				capacity: 0			}
-				],
+			body: [],
 				status: 200
 			});
 

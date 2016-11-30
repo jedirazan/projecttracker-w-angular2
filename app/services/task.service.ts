@@ -38,13 +38,6 @@ export class TaskService {
       });
   }
 
-  getState(): Promise<State[]> {
-    return this.http.get('app/state')
-     .toPromise()
-     .then(response => response.json().data as State[])
-     .catch(this.handleError);
-  }
-
   update(task: Task): Promise<Task> {
     const url = `${this.tasksUrl}/${task.id}`;
     return this.http

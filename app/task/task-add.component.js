@@ -21,11 +21,6 @@ var TaskAddComponent = (function () {
         this.location = location;
         this.members = []; // initialize because we're gonna do .push later
     }
-    TaskAddComponent.prototype.populateSelectState = function () {
-        var _this = this;
-        this.taskService.getState()
-            .then(function (state) { return _this.state = state; });
-    };
     TaskAddComponent.prototype.populateSelectMember = function () {
         var _this = this;
         this.route.params.forEach(function (params) {
@@ -41,7 +36,6 @@ var TaskAddComponent = (function () {
         });
     };
     TaskAddComponent.prototype.ngOnInit = function () {
-        this.populateSelectState();
         this.populateSelectMember();
     };
     TaskAddComponent.prototype.goBack = function () {

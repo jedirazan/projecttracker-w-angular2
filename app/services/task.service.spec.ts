@@ -21,7 +21,7 @@ describe('Service: TaskService', () => {
 				BaseRequestOptions
 				],
 				provide: Http,
-				useFactory: (backend: XHRBackend, defaultOptions: BaseRequestOptions) => {
+				useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
 					return new Http(backend, defaultOptions);
 				}
 			}
@@ -35,7 +35,7 @@ describe('Service: TaskService', () => {
 
 	function setupConnections(backend: MockBackend, options: any) {
 		backend.connections.subscribe((connection: MockConnection) => {
-			if (connection.request.url === 'api/forms') {
+			if (connection.request.url === 'api/tasks') {
 				const responseOptions = new ResponseOptions(options);
 				const response = new Response(responseOptions);
 
@@ -110,9 +110,9 @@ describe('Service: TaskService', () => {
 			    assignee: 1,
 			    relatedTicket: ''
 			}
-				],
-				status: 200
-			});
+			],
+			status: 200
+		});
 
 		let task = {
 			id: 1,

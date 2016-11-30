@@ -30,7 +30,7 @@ describe('Service: MemberService', function () {
     }));
     function setupConnections(backend, options) {
         backend.connections.subscribe(function (connection) {
-            if (connection.request.url === 'api/forms') {
+            if (connection.request.url === 'api/members') {
                 var responseOptions = new http_1.ResponseOptions(options);
                 var response = new http_1.Response(responseOptions);
                 connection.mockRespond(response);
@@ -80,14 +80,7 @@ describe('Service: MemberService', function () {
     });
     it('should update 1st member', function () {
         setupConnections(backend, {
-            body: [
-                {
-                    id: 1,
-                    name: 'R2-B2',
-                    position: '',
-                    capacity: 0
-                }
-            ],
+            body: [],
             status: 200
         });
         var member = {

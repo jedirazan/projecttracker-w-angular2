@@ -7,8 +7,8 @@ import { MemberService, ProjectService, SprintService } from '../services/index'
 
 @Component({
   moduleId: module.id,
-  selector: 'my-project',
-  templateUrl: 'project.component.html'
+  selector: 'my-project-edit',
+  templateUrl: 'project-edit.component.html'
 })
 
 export class ProjectEditComponent implements OnInit {
